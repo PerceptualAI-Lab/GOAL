@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>GOAL: Global-local Object Alignment Learning project page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .title {
+            text-align: center;
+            margin: 40px 0;
+        }
+        .authors {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .affiliations {
+            text-align: center;
+            margin: 20px 0;
+            color: #666;
+        }
+        .conference {
+            text-align: center;
+            margin: 20px 0;
+            color: #2962ff;
+            font-weight: bold;
+        }
+        .links {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 0 10px;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .demo-section {
+            margin: 40px 0;
+        }
+        .demo-title {
+            text-align: center;
+            font-size: 24px;
+            margin: 20px 0;
+        }
+        .demo-image {
+            width: 100%;
+            max-width: 1000px;
+            margin: 20px auto;
+            display: block;
+        }
+        
+        /* 슬라이드쇼 스타일 */
+        .slideshow-container {
+            max-width: 1000px; /* 전체 컨테이너 최대 너비 */
+            width: 90%; /* 화면 너비의 90%로 설정 */
+            height: 700px; /* 고정 높이 설정 - 필요에 따라 조정 */
+            position: relative;
+            margin: 0 auto;
+            background-color: #f5f5f5; /* 배경색 추가 - 선택사항 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden; /* 컨테이너 밖으로 넘치는 콘텐츠 숨김 */
+        }
+        
+        .slide {
+            display: none;
+            width: 100%;
+        }
+        
+        .slide img {
+            width: 100%; /* 컨테이너 너비에 맞게 조정 */
+            max-height: 600px; /* 최대 높이 설정 */
+            object-fit: contain; /* 비율 유지하면서 컨테이너에 맞춤 */
+            display: block;
+            margin: 0 auto; /* 가운데 정렬 */
+        }
+        
+        .slide.active {
+            display: block;
+        }
+        
+        /* 페이드 효과 */
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+        
+        @keyframes fade {
+            from {opacity: 0.4}
+            to {opacity: 1}
+        }
+        
+        /* 컨트롤 버튼 */
+        .slideshow-controls {
+            text-align: center;
+            margin-top: 10px;
+        }
+        
+        .dot {
+            display: inline-block;
+            height: 12px;
+            width: 12px;
+            margin: 0 4px;
+            background-color: #bbb;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.6s ease;
+        }
+        
+        .dot.active, .dot:hover {
+            background-color: #555;
+        }
+        
+        .small-images {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .small-images img {
+            width: 23%;
+            max-width: 250px;
+        }
+        .abstract-section {
+            margin: 40px auto;
+            max-width: 1000px;
+            text-align: left;
+        }
+        .abstract-content {
+            line-height: 1.8;
+            color: #444;
+            text-align: justify;
+            padding: 0 20px;
+        }
+        .abstract-content p {
+            margin-bottom: 20px;
+        }
+        .section {
+            margin: 60px auto;
+            max-width: 1200px;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .figure-wrapper {
+            margin: 20px auto;
+            max-width: 1000px;
+        }
+
+        .full-width-image {
+            width: 100%;
+            max-width: 1000px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .figure-caption {
+            margin-top: 15px;
+            text-align: left;
+            color: #555;
+            font-size: 0.95em;
+            line-height: 1.6;
+            padding: 0;
+            width: 100%;
+        }
+
+        .figure-caption p {
+            margin: 8px 0;
+            max-width: 1000px;
+        }
+    </style>
+</head>
+<body>
+    <div class="title">
+        <h1>GOAL: Global-local Object Alignment Learning</h1>
+    </div>
+
+    <div class="authors">
+        <span><a href="https://drive.google.com/file/d/1uYybI4OALvTs6q57_iWY6d6Pw_7FhcKk/view?usp=sharing">Hyungyu Choi</a><sup>1,*</sup></span> &nbsp;&nbsp;
+        <span><a href="https://youngkyunjang.github.io/">Young Kyun Jang</a><sup>2,*</sup></span> &nbsp;&nbsp;
+        <span><a href="https://pailab.cau.ac.kr/members/faculty">Chanho Eom</a><sup>1</sup></span><br>
+        <span style="font-size: 0.9em; color: #666;">*Equal contribution</span>
+    </div>
+    
+    <div class="affiliations">
+        <sup>1</sup>Chung-Ang University, South Korea<br>
+        <sup>2</sup>Meta AI, USA
+    </div>
+
+    <div class="conference">
+        CVPR 2025
+    </div>
+
+    <div class="links">
+        <a href="https://drive.google.com/file/d/1E-g68yzf9-BBYe-C1zOxTrai7oFL7ifx/view?usp=sharing" class="button">📄 Paper</a>
+        <a href="https://drive.google.com/file/d/1E-g68yzf9-BBYe-C1zOxTrai7oFL7ifx/view?usp=sharing" class="button">📚 arXiv</a>
+        <a href="https://github.com/hyungyu-choi/GOAL-Global-local-Object-Alignment-Learning" class="button">💻 Code</a>
+        <a href="https://drive.google.com/file/d/1E-g68yzf9-BBYe-C1zOxTrai7oFL7ifx/view?usp=sharing" class="button">🎥 Video</a>
+    </div>
+
+<div class="section">
+    <h2 class="section-title" style="margin-bottom: 1px;">Image-to-Text Retrieval Demo: GOAL vs CLIP</h2>
+    
+    <style>
+        .demo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+        }
+        
+        .query-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .query-image {
+            width: 100px;
+            height: 100px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            object-fit: cover;
+        }
+        
+        .models-container {
+            display: none;
+            justify-content: space-around;
+            margin-top: 25px;
+            align-items: flex-start;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        
+        .models-container.show {
+            display: flex;
+            opacity: 1;
+        }
+        
+        .model-section {
+            text-align: center;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .model-encoder-container {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            position: relative;
+        }
+        
+        .model-encoder-container.show {
+            opacity: 1;
+        }
+
+        /* GOAL 모델 이미지 크기 설정 */
+        .model-section:first-child .model-encoder {
+            width: 600px;
+            height: auto;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        /* CLIP 모델 이미지 크기 설정 */
+        .model-section:last-child .model-encoder {
+            width: 350px;
+            height: auto;
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .model-encoder-container .processing-indicator {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+        }
+        
+        .result-container {
+            max-width: 400px;
+            margin: 20px auto;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            margin-top: 35px;
+        }
+        
+        .result-container.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .result-image-container {
+            width: 100%;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .model-encoder.processing {
+            animation: glow 1.5s infinite alternate;
+        }
+        
+        .flying-image {
+            position: fixed;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+            pointer-events: none;
+            z-index: 1000;
+            transition: all 0.8s ease-in-out;
+        }
+        
+        .processing-indicator {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            border: 3px solid rgba(243, 243, 243, 0.8);
+            border-top: 3px solid #2962ff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            opacity: 0;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            box-sizing: content-box;
+        }
+        
+        .processing .processing-indicator {
+            opacity: 1;
+        }
+        
+        .result-label {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        @keyframes glow {
+            from { filter: brightness(1); }
+            to { filter: brightness(1.3); }
+        }
+        
+        @keyframes spin {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+    </style>
+
+    <div class="demo-container">
+        <h3 style="text-align: center; margin-bottom: 20px; margin-top: 10px;">Select a query image:</h3>
+        
+        <div class="query-images">
+            <img src="demo/query1.jpg" class="query-image" onclick="processImage(this, 'query1')" alt="Query 1">
+            <img src="demo/query2.jpg" class="query-image" onclick="processImage(this, 'query2')" alt="Query 2">
+            <img src="demo/query3.jpg" class="query-image" onclick="processImage(this, 'query3')" alt="Query 3">
+            <img src="demo/query4.jpg" class="query-image" onclick="processImage(this, 'query4')" alt="Query 4">
+            <img src="demo/query5.jpg" class="query-image" onclick="processImage(this, 'query5')" alt="Query 5">
+            <img src="demo/query6.jpg" class="query-image" onclick="processImage(this, 'query6')" alt="Query 6">
+            <img src="demo/query7.jpg" class="query-image" onclick="processImage(this, 'query7')" alt="Query 7">
+        </div>
+
+        <div class="models-container" id="modelsContainer">
+            <div class="model-section">
+                <h3>GOAL</h3>
+                <div class="model-encoder-container">
+                    <img src="images/goal_icon.PNG" class="model-encoder" alt="GOAL Encoder">
+                    <div class="processing-indicator"></div>
+                </div>
+                <div id="goal-result" class="result-container">
+                    <div class="result-image-container"></div>
+                </div>
+            </div>
+
+            <div class="model-section">
+                <h3>CLIP</h3>
+                <div class="model-encoder-container">
+                    <img src="images/clip_icon.PNG" class="model-encoder" alt="CLIP Encoder">
+                    <div class="processing-indicator"></div>
+                </div>
+                <div id="clip-result" class="result-container">
+                    <div class="result-image-container"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const results = {
+            'query1': {
+                goal: "images/goal_result1.PNG",
+                clip: "images/clip_result1.PNG"
+            },
+            'query2': {
+                goal: "images/goal_result2.PNG",
+                clip: "images/clip_result2.PNG"
+            },
+            'query3': {
+                goal: "images/goal_result3.PNG",
+                clip: "images/clip_result3.PNG"
+            },
+            'query4': {
+                goal: "images/goal_result4.PNG",
+                clip: "images/clip_result4.PNG"
+            },
+            'query5': {
+                goal: "images/goal_result5.PNG",
+                clip: "images/clip_result5.PNG"
+            },
+            'query6': {
+                goal: "images/goal_result6.PNG",
+                clip: "images/clip_result6.PNG"
+            },
+            'query7': {
+                goal: "images/goal_result7.PNG",
+                clip: "images/clip_result7.PNG"
+            }
+        };
+
+        let isFirstClick = true;
+
+        function processImage(imgElement, queryId) {
+            const modelsContainer = document.getElementById('modelsContainer');
+            const encoderContainers = document.querySelectorAll('.model-encoder-container');
+            
+            // Show models container on first click
+            if (isFirstClick) {
+                modelsContainer.style.display = 'flex';
+                setTimeout(() => {
+                    modelsContainer.classList.add('show');
+                    encoderContainers.forEach((container, index) => {
+                        setTimeout(() => {
+                            container.classList.add('show');
+                        }, index * 200);
+                    });
+                }, 100);
+                isFirstClick = false;
+            }
+
+            // Create flying image effect
+            const rect = imgElement.getBoundingClientRect();
+            const flyingImg = imgElement.cloneNode(true);
+            flyingImg.className = 'flying-image';
+            flyingImg.style.top = rect.top + 'px';
+            flyingImg.style.left = rect.left + 'px';
+            document.body.appendChild(flyingImg);
+
+            // GOAL model animation
+            const goalEncoder = document.querySelector('.model-section:first-child .model-encoder');
+            const goalRect = goalEncoder.getBoundingClientRect();
+            
+            setTimeout(() => {
+                flyingImg.style.top = goalRect.top + 'px';
+                flyingImg.style.left = goalRect.left + 'px';
+                flyingImg.style.opacity = '0';
+                
+                goalEncoder.classList.add('processing');
+                goalEncoder.parentElement.classList.add('processing');
+                
+                setTimeout(() => {
+                    document.getElementById('goal-result').innerHTML = `
+                        <div class="result-label">GOAL Retrieval Result</div>
+                        <div class="result-image-container">
+                            <img src="${results[queryId].goal}" style="width: 100%;">
+                        </div>
+                    `;
+                    document.getElementById('goal-result').classList.add('show');
+                    goalEncoder.classList.remove('processing');
+                    goalEncoder.parentElement.classList.remove('processing');
+                    flyingImg.remove();
+                }, 4000);
+            }, 150);
+
+            // CLIP model animation
+            const clipImg = flyingImg.cloneNode(true);
+            document.body.appendChild(clipImg);
+            const clipEncoder = document.querySelector('.model-section:last-child .model-encoder');
+            const clipRect = clipEncoder.getBoundingClientRect();
+            
+            setTimeout(() => {
+                clipImg.style.top = clipRect.top + 'px';
+                clipImg.style.left = clipRect.left + 'px';
+                clipImg.style.opacity = '0';
+                
+                clipEncoder.classList.add('processing');
+                clipEncoder.parentElement.classList.add('processing');
+                
+                setTimeout(() => {
+                    document.getElementById('clip-result').innerHTML = `
+                        <div class="result-label">CLIP Retrieval Result</div>
+                        <div class="result-image-container">
+                            <img src="${results[queryId].clip}" style="width: 100%;">
+                        </div>
+                    `;
+                    document.getElementById('clip-result').classList.add('show');
+                    clipEncoder.classList.remove('processing');
+                    clipEncoder.parentElement.classList.remove('processing');
+                    clipImg.remove();
+                }, 4000);
+            }, 150);
+        }
+    </script>
+</div>
+
+    <div class="abstract-section">
+        <h2 class="demo-title">Abstract</h2>
+        <div class="abstract-content">
+            <p>Vision-language models like CLIP have shown impressive capabilities in aligning images and text, but they often struggle with lengthy, detailed text descriptions due to their training focus on concise captions. We present GOAL (Global-local Object Alignment Learning), a novel fine-tuning method that enhances CLIP's ability to handle lengthy text by leveraging both global and local semantic alignments.</p>
+
+            <p>Our approach consists of two key components: Local Image-Sentence Matching (LISM), which identifies corresponding pairs between image segments and descriptive sentences, and Token Similarity-based Learning (TSL), which efficiently propagates local element attention through these matched pairs.</p>
+
+            <p>Evaluating GOAL on three new benchmarks for image-lengthy text retrieval, we demonstrate significant improvements over baseline CLIP fine-tuning, establishing a simple yet effective approach for adapting CLIP to detailed textual descriptions. Through extensive experiments, we show that our method's focus on local semantic alignment alongside global context leads to more nuanced and representative embeddings, particularly beneficial for tasks requiring fine-grained understanding of lengthy text descriptions.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">LISM Pipeline</h2>
+        <div class="figure-wrapper">
+            <img src="images/image2.PNG" alt="LISM Pipeline" class="full-width-image">
+            <div class="figure-caption">
+                <p>Given a global image and its detailed caption, LISM uses SAM to segment the image into local regions and splits the caption into individual sentences. These local pairs are then processed through CLIP encoders to obtain CLS embeddings, which are used for maximum similarity matching to identify the most relevant image-sentence pairs.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">GOAL Framework</h2>
+        <div class="figure-wrapper">
+            <img src="images/goal_icon.PNG" alt="GOAL Framework" class="full-width-image">
+            <div class="figure-caption">
+                <p>The framework processes global image-text pairs and their local pairs through shared CLIP encoders, extracting patch and sequence tokens. TSL identifies and projects corresponding token regions to match local CLS embeddings, enabling attention on local element.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Quantitative Results</h2>
+        <div class="figure-wrapper">
+            <img src="images/image4.PNG" alt="Quantitative Results" class="full-width-image">
+            <div class="figure-caption">
+                <p>Original test set results on DOCCI dataset. Comparison of retrieval performance across different fine-tuning approaches using ViT-B/16 and ViT-L/14 models. The evaluation metrics include both text-to-image and image-to-text Recall@K. The best and second-best scores for each method are marked in <strong>bold</strong> and <u>underlined</u>, respectively.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Qualitative Results</h2>
+        <div class="figure-wrapper">
+            <img src="images/image5.PNG" alt="Qualitative Results" class="full-width-image">
+            <div class="figure-caption">
+                <p>Comparison of attention maps generated by GOAL and w/o TSL methods. For each row pair, we present three components:
+                    (1) original input image (left), (2) attention heatmap visualization (middle), and (3) overlay of attention on the original image (right). The
+                    examples demonstrate how GOAL achieves more focused attention compared to the baseline w/o TSL method. Red circles in the overlay
+                    highlight regions where GOAL shows particularly effective attention localization.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 슬라이드쇼 코드
+        let slideIndex = 0;
+        let slideTimeout;
+        
+        // 자동 슬라이드 시작
+        startSlideshow();
+        
+        function startSlideshow() {
+            slideTimeout = setTimeout(nextSlide, 1500); // 3초마다 이미지 변경
+        }
+        
+        function nextSlide() {
+            slideIndex++;
+            if (slideIndex >= document.querySelectorAll('.slide').length) {
+                slideIndex = 0;
+            }
+            showSlide(slideIndex);
+            startSlideshow();
+        }
+        
+        function setSlide(index) {
+            // 자동 전환 타이머 초기화
+            clearTimeout(slideTimeout);
+            
+            // 선택한 슬라이드 표시
+            slideIndex = index;
+            showSlide(slideIndex);
+            
+            // 자동 슬라이드 다시 시작
+            startSlideshow();
+        }
+        
+        function showSlide(index) {
+            const slides = document.querySelectorAll('.slide');
+            const dots = document.querySelectorAll('.dot');
+            
+            // 모든 슬라이드 숨기기
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove('active');
+                dots[i].classList.remove('active');
+            }
+            
+            // 선택한 슬라이드만 표시
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+        }
+    </script>
+</body>
+</html>
