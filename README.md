@@ -34,7 +34,7 @@ You can fine-tuning the CLIP with GOAL method in goal_bbox_local_token_align_onl
 You can adjust datasets, ouput path, ... in get_args_parser()
 
 ```bash
-python goal_bbox_local_token_align_only_max_pair.py
+python goal_loss_finetuning.py
 ```
 
 ## 📈 Evaluate
