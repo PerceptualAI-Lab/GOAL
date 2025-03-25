@@ -1,8 +1,23 @@
-# GOAL: Global-local Object Alignment Learning
+# GOAL⚽: Global-local Object Alignment Learning
 
-Implement of paper: [GOAL: Global-local Object Alignment Learning](https://drive.google.com/file/d/1E-g68yzf9-BBYe-C1zOxTrai7oFL7ifx/view?usp=sharing)
+## 🔍 **[Project Page](https://perceptualai-lab.github.io/GOAL/)**
 
-## Datasets
+Implement of paper: [GOAL: Global-local Object Alignment Learning](https://arxiv.org/abs/2503.17782)
+
+## 🐳 Docker
+
+Our implementation is also available as a Docker image:
+* [Docker Hub](https://hub.docker.com/r/username/goal-project)
+
+```bash
+# Pull the image
+docker pull username/goal-project:latest
+
+# Run the container
+docker run --gpus all -it username/goal-project:latest
+```
+
+## 📊 Datasets
 
 Please download the datasets from the links below:
 
@@ -12,7 +27,7 @@ Please download the datasets from the links below:
 * DCI Dataset
     * [Download link](https://github.com/facebookresearch/DCI)
 
-## Train
+## 🚀 Train
 
 You can fine-tuning the CLIP with GOAL method in goal_bbox_local_token_align_only_max_pair.py
 
@@ -22,7 +37,7 @@ You can adjust datasets, ouput path, ... in get_args_parser()
 python goal_bbox_local_token_align_only_max_pair.py
 ```
 
-## Evaluate
+## 📈 Evaluate
 
 Use your fine-tunned weight
 
@@ -39,7 +54,7 @@ python retrieval_goal.py --ckpt <path/to/your/weight>
 python mAP_goal_jointtest.py --ckpt <path/to/your/weight>
 ```
 
-## Visualize
+## 👁️ Visualize
 
 You can extract the attention map with you custum weight using visualization_attentionmap_longtestset.py
 
@@ -49,19 +64,15 @@ You can extract the attention map with you custum weight using visualization_att
 python visualization_attentionmap_longtestset.py --image_path <path/to/your/image> --output_path <path/to/your/output> --model L --ckpt <path/to/your/weight>
 ```
 
-<!-- ## Dependencies
-* Python >= 3.5
-* PyTorch >= 0.4.0
-* torchvision
-* scipy
-* numpy
-* scikit_learn
+## 📝 Citation
 
-## Current Result
-| Re-Ranking | backbone | mAP | rank1 | rank3 | rank5 | rank10 |
-|------------|----------|-----|-------|-------|-------|---------|
-| yes        | resnet50 | 94.33| 95.58 | 97.54 | 97.92 | 98.46  |
-| no         | resnet50 | 86.15| 94.95 | 97.42 | 98.07 | 98.93  |
+If you find this work useful in your research, please consider citing:
 
-## Data
-The data structure would look like: -->
+```bibtex
+@inproceedings{Hyungyu_2025_CVPR,
+  author={Hyungyu Choi, Young Kyun Jang, Chanho Eom},
+  title={GOAL: Global-local Object Alignment Learning},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year={2025}
+}
+

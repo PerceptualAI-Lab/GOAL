@@ -45,11 +45,11 @@ class QueryLoader(Dataset):
     
 
 def main(args):
-    os.environ["CUDA_VISIBLE_DEVICES"] = "0"  # GPU 1번 인덱스만 사용
+    os.environ["CUDA_VISIBLE_DEVICES"] = "0"  
     fabric = L.Fabric(
         accelerator="cuda", 
         devices=devices,
-        precision="bf16-mixed"  # "32"에서 "bf16-mixed"로 변경
+        precision="bf16-mixed"  
     )
     fabric.launch()
     fabric.seed_everything(1337 + fabric.global_rank)
@@ -67,7 +67,7 @@ def main(args):
         processor = transformers.AutoProcessor.from_pretrained(args.model)
         model = transformers.AutoModel.from_pretrained(args.model).bfloat16()
         longclip_pos_embeddings(model, args.new_max_token)
-        if args.ckpt:  # ckpt가 제공된 경우에만 로드
+        if args.ckpt:  
             model.load_state_dict(torch.load(args.ckpt), strict=False)
 
     if args.dataset == 'docci':

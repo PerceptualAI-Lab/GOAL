@@ -118,7 +118,7 @@ def get_relevant_captions(filename, image_to_segs, org_images, filename_to_capti
     
     if filename in org_images:
         # Query is an org image
-        relevant_captions = [filename_to_caption[filename]]  # 원본 이미지의 캡션 추가
+        relevant_captions = [filename_to_caption[filename]] 
         relevant_captions.extend([seg['caption'] for seg in image_to_segs[filename]])
     else:
         # Query is a seg image
@@ -133,16 +133,14 @@ def get_relevant_items_for_text(query_caption, all_filenames, image_to_segs, org
     for filename, caption in filename_to_caption.items():
         if caption == query_caption:
             if filename in org_images:
-                # 쿼리가 org 이미지의 캡션인 경우
-                relevant_items.append(all_filenames.index(filename))  # org 이미지
-                relevant_items.extend([all_filenames.index(seg['filename']) for seg in image_to_segs[filename]])  # seg 이미지들
+                relevant_items.append(all_filenames.index(filename))  
+                relevant_items.extend([all_filenames.index(seg['filename']) for seg in image_to_segs[filename]]) 
             else:
-                # 쿼리가 seg 이미지의 캡션인 경우
-                relevant_items.append(all_filenames.index(filename))  # seg 이미지
+                relevant_items.append(all_filenames.index(filename))  
                 org_filename = get_org_filename(filename)
                 if org_filename in all_filenames:
-                    relevant_items.append(all_filenames.index(org_filename))  # org 이미지
-    return list(set(relevant_items))  # 중복 제거
+                    relevant_items.append(all_filenames.index(org_filename))  
+    return list(set(relevant_items))  
 
 @torch.no_grad()
 def test(fabric: L.Fabric, model: torch.nn.Module, query_loader, k=None) -> torch.Tensor:
