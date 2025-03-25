@@ -29,7 +29,7 @@ Please download the datasets from the links below:
 
 ## 🚀 Train
 
-You can fine-tuning the CLIP with GOAL method in goal_bbox_local_token_align_only_max_pair.py
+You can fine-tuning the CLIP with GOAL method in goal_loss_finetuning.py
 
 You can adjust datasets, ouput path, ... in get_args_parser()
 
