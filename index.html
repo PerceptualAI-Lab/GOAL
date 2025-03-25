@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>GOAL: Global-local Object Alignment Learning project page</title>
+    <title>GOAL⚽: Global-local Object Alignment Learning project page</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -58,6 +58,43 @@
             display: block;
         }
         
+        .conference-banner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            background: linear-gradient(135deg, #2c3e50, #4ca1af);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            color: white;
+        }
+
+        .conference-logo {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .conference-year {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-top: -0.5rem;
+            color: #f1c40f;
+        }
+
+        .conference-type {
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-top: 0.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.3rem 1.5rem;
+            border-radius: 20px;
+        }
+
         /* 슬라이드쇼 스타일 */
         .slideshow-container {
             max-width: 1000px; /* 전체 컨테이너 최대 너비 */
@@ -208,10 +245,8 @@
     </div>
 
     <div class="links">
-        <a href="https://drive.google.com/file/d/1E-g68yzf9-BBYe-C1zOxTrai7oFL7ifx/view?usp=sharing" class="button">📄 Paper</a>
-        <a href="https://drive.google.com/file/d/1E-g68yzf9-BBYe-C1zOxTrai7oFL7ifx/view?usp=sharing" class="button">📚 arXiv</a>
-        <a href="https://github.com/hyungyu-choi/GOAL-Global-local-Object-Alignment-Learning" class="button">💻 Code</a>
-        <a href="https://drive.google.com/file/d/1E-g68yzf9-BBYe-C1zOxTrai7oFL7ifx/view?usp=sharing" class="button">🎥 Video</a>
+        <a href="https://arxiv.org/abs/2503.17782" class="button">📚 arXiv</a>
+        <a href="https://github.com/PerceptualAI-Lab/GOAL?tab=readme-ov-file" class="button">💻 Code</a>
     </div>
 
 <div class="section">
@@ -537,11 +572,11 @@
     <div class="abstract-section">
         <h2 class="demo-title">Abstract</h2>
         <div class="abstract-content">
-            <p>Vision-language models like CLIP have shown impressive capabilities in aligning images and text, but they often struggle with lengthy, detailed text descriptions due to their training focus on concise captions. We present GOAL (Global-local Object Alignment Learning), a novel fine-tuning method that enhances CLIP's ability to handle lengthy text by leveraging both global and local semantic alignments.</p>
+            <p>Vision-language models like CLIP have shown impressive capabilities in aligning images and text, but they often struggle with lengthy and detailed text descriptions because of their training focus on short and concise captions. We present GOAL (Global-local Object Alignment Learning), a novel fine-tuning method that enhances CLIP’s ability to handle lengthy text by leveraging both global and local semantic alignments between image and lengthy text.</p>
 
             <p>Our approach consists of two key components: Local Image-Sentence Matching (LISM), which identifies corresponding pairs between image segments and descriptive sentences, and Token Similarity-based Learning (TSL), which efficiently propagates local element attention through these matched pairs.</p>
 
-            <p>Evaluating GOAL on three new benchmarks for image-lengthy text retrieval, we demonstrate significant improvements over baseline CLIP fine-tuning, establishing a simple yet effective approach for adapting CLIP to detailed textual descriptions. Through extensive experiments, we show that our method's focus on local semantic alignment alongside global context leads to more nuanced and representative embeddings, particularly beneficial for tasks requiring fine-grained understanding of lengthy text descriptions.</p>
+            <p> Evaluating GOAL on three new benchmarks for image-lengthy text retrieval, we demonstrate significant improvements over baseline CLIP fine-tuning, establishing a simple yet effective approach for adapting CLIP to detailed textual descriptions. Through extensive experiments, we show that our method’s focus on local semantic alignment alongside global context leads to more nuanced and representative embeddings, particularly beneficial for tasks requiring fine-grained understanding of lengthy text descriptions.</p>
         </div>
     </div>
 
@@ -586,6 +621,17 @@
                     highlight regions where GOAL shows particularly effective attention localization.</p>
             </div>
         </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">📝 Citation</h2>
+        <p>If you find this work useful in your research, please consider citing:</p>
+        <pre><code class="bibtex">@inproceedings{Hyungyu_2025_CVPR,
+            author={Hyungyu Choi, Young Kyun Jang, Chanho Eom},
+            title={GOAL: Global-local Object Alignment Learning},
+            booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+            year={2025}
+    }</code></pre>
     </div>
 
     <script>
