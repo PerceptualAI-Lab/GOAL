@@ -15,6 +15,7 @@ Our implementation is also available as a Docker image:
 ```bash
 # Pull the image
 docker pull qkenr0804/goal:goal
+```
 
 ## 📊 Datasets
 
