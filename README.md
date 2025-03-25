@@ -1,21 +1,20 @@
 # GOAL⚽: Global-local Object Alignment Learning
-
-## 🔍 **[Project Page](https://perceptualai-lab.github.io/GOAL/)**
-
 Implement of paper: [GOAL: Global-local Object Alignment Learning](https://arxiv.org/abs/2503.17782)
+
+## 🔍 Project Page
+
+Visit our project page for additional information and interactive examples:
+* **[https://perceptualai-lab.github.io/GOAL/](https://perceptualai-lab.github.io/GOAL/)**
+
 
 ## 🐳 Docker
 
 Our implementation is also available as a Docker image:
-* [Docker Hub](https://hub.docker.com/r/username/goal-project)
+* [Docker Hub](https://hub.docker.com/repository/docker/qkenr0804/goal/general)
 
 ```bash
 # Pull the image
-docker pull username/goal-project:latest
-
-# Run the container
-docker run --gpus all -it username/goal-project:latest
-```
+docker pull qkenr0804/goal:goal
 
 ## 📊 Datasets
 
