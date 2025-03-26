@@ -72,7 +72,7 @@ python retrieval_goal.py --ckpt <path/to/your/weight>
 python mAP_goal_jointtest.py --ckpt <path/to/your/weight>
 ```
 
-## 👁️ Visualizatuib
+## 👁️ Visualization
 
 You can extract the attention map with you custum weight using visualization_attentionmap.py
 
