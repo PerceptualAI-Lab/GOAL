@@ -74,12 +74,12 @@ python mAP_goal_jointtest.py --ckpt <path/to/your/weight>
 
 ## 👁️ Visualizatuib
 
-You can extract the attention map with you custum weight using visualization_attentionmap_longtestset.py
+You can extract the attention map with you custum weight using visualization_attentionmap.py
 
 ![visualization attention map example](./images/image5.PNG)
 
 ```bash
-python visualization_attentionmap_longtestset.py --image_path <path/to/your/image> --output_path <path/to/your/output> --model L --ckpt <path/to/your/weight>
+python visualization_attentionmap.py --image_path <path/to/your/image> --output_path <path/to/your/output> --model L --ckpt <path/to/your/weight>
 ```
 
 ## 📝 Citation
