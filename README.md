@@ -17,6 +17,22 @@ Our implementation is also available as a Docker image:
 docker pull qkenr0804/goal:goal
 ```
 
+## 🏋️ Fine-tuned Weights
+
+Download our fine-tuned weights from the links below:
+
+* 🔍 ViT-Base16 Model: GOAL method fine-tuned with DOCCI
+    * [Download link](https://drive.google.com/file/d/19M1QvrnQqRtE0i8Zr0qHZvawL8446cTW/view?usp=drive_link)
+
+* 🔍 ViT-Base16 Model: GOAL method fine-tuned with DCI
+    * [Download link](https://drive.google.com/file/d/1zvT1yzds45f-jdVNAR1JadQ3D5bbcgKB/view?usp=drive_link)
+
+* 🔍 ViT-Large14 Model: GOAL method fine-tuned with DOCCI
+    * [Download link](https://drive.google.com/file/d/10RpCjDTK9PlOnMhb_TvgAOYXtzR68Xbc/view?usp=drive_link)
+
+* 🔍 ViT-Large14 Model: GOAL method fine-tuned with DCI
+    * [Download link](https://drive.google.com/file/d/1jw-b2MqLRLCCHumMLrqS_BHcy8ao0EPE/view?usp=drive_link)
+
 ## 📊 Datasets
 
 Please download the datasets from the links below:
@@ -27,7 +43,9 @@ Please download the datasets from the links below:
 * DCI Dataset
     * [Download link](https://github.com/facebookresearch/DCI)
 
-## 🚀 Train
+For our newly proposed evaluation protocols on DCI test set and ShareGPT4V test set, please refer to the JSON files available in the `datasets` folder of this repository.
+
+## 🚀 Training
 
 You can fine-tuning the CLIP with GOAL method in goal_loss_finetuning.py
 
@@ -37,7 +55,7 @@ You can adjust datasets, ouput path, ... in get_args_parser()
 python goal_loss_finetuning.py
 ```
 
-## 📈 Evaluate
+## 📈 Evaluatation
 
 Use your fine-tunned weight
 
@@ -54,7 +72,7 @@ python retrieval_goal.py --ckpt <path/to/your/weight>
 python mAP_goal_jointtest.py --ckpt <path/to/your/weight>
 ```
 
-## 👁️ Visualize
+## 👁️ Visualizatuib
 
 You can extract the attention map with you custum weight using visualization_attentionmap_longtestset.py
 
